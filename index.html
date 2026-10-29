@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlogSpace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <h2>BlogApplication</h2>
+    <div>
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('login')">Login</button>
+      <button onclick="showPage('register')">Register</button>
+      <button onclick="showPage('dashboard')">Dashboard</button>
+      <button onclick="showPage('create')">Create Blog</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Home Page -->
+    <section id="home" class="page">
+      <h1>Welcome to BlogSpace</h1>
+      <p>Read stories and share your ideas with the world.</p>
+      <div id="blogList" class="blog-list"></div>
+    </section>
+
+    <!-- Login Page -->
+    <section id="login" class="page hidden">
+      <h1>Login</h1>
+      <form onsubmit="login(event)">
+        <input id="loginEmail" type="email"
+          placeholder="Enter email" required>
+        <input id="loginPassword" type="password"
+          placeholder="Enter password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p id="loginMessage"></p>
+    </section>
+
+    <!-- Register Page -->
+    <section id="register" class="page hidden">
+      <h1>Create Account</h1>
+      <form onsubmit="register(event)">
+        <input id="registerName" type="text"
+          placeholder="Enter name" required>
+        <input id="registerEmail" type="email"
+          placeholder="Enter email" required>
+        <input id="registerPassword" type="password"
+          placeholder="Create password" required>
+        <button type="submit">Register</button>
+      </form>
+      <p id="registerMessage"></p>
+    </section>
+
+    <!-- Dashboard Page -->
+    <section id="dashboard" class="page hidden">
+      <h1>My Dashboard</h1>
+      <p id="welcomeMessage">Please login first.</p>
+      <div id="myBlogs" class="blog-list"></div>
+    </section>
+
+    <!-- Create Blog Page -->
+    <section id="create" class="page hidden">
+      <h1>Create a New Blog</h1>
+      <form onsubmit="createBlog(event)">
+        <input id="blogTitle" type="text"
+          placeholder="Blog title" required>
+        <textarea id="blogContent"
+          placeholder="Write your blog here..."
+          required></textarea>
+        <button type="submit">Publish Blog</button>
+      </form>
+      <p id="blogMessage"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 BlogSpace | My Internship Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
